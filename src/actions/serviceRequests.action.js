@@ -1,87 +1,67 @@
-import { handleErrors, getErrorMessage } from '../Pages/utils/errorHandlers'
+import { handleRequests } from "../components/utils/errorHandlers";
 
 export function createServiceRequest(serviceRequest) {
-    const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL
-        }/serviceRequests`;
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(serviceRequest)
-    };
+  const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL}/serviceRequests`;
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(serviceRequest),
+  };
 
-    return fetch(apiUrl, requestOptions)
-        .then(handleErrors)
-        .then((res) => res.json())
-        .catch((error) => {
-            debugger
-            error = getErrorMessage(error);
-            return error;
-        });
+  return handleRequests(apiUrl, requestOptions);
 }
 
-export function fetchAllServiceRequests() {
-    const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL
-        }/serviceRequests`
-    const requestOptions = {
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    };
+export function fetchServiceRequests(userId) {
+  const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL}/serviceRequests?userId=${userId}`;
+  const requestOptions = {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
 
-    return fetch(apiUrl, requestOptions)
-        .then((res) => res.json())
-        .catch((error) => { console.log('There was an error', error) });
+  return handleRequests(apiUrl, requestOptions);
 }
 
 export function fetchServiceRequest(id) {
-    const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL
-        }/serviceRequests/${id}`
-    debugger
-    const requestOptions = {
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    };
+  const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL}/serviceRequests/${id}`;
+  const requestOptions = {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
 
-    return fetch(apiUrl, requestOptions)
-        .then((res) => res.json())
-        .catch((error) => { console.log('There was an error', error) });
+  return handleRequests(apiUrl, requestOptions);
 }
 
 export function updateServiceRequest(serviceRequest, id) {
-    const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL
-        }/serviceRequests/${id}`
-    const requestOptions = {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(serviceRequest)
-    };
+  const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL}/serviceRequests/${id}`;
+  const requestOptions = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(serviceRequest),
+  };
 
-    return fetch(apiUrl, requestOptions)
-        .then((res) => res.json())
-        .catch((error) => { console.log('There was an error', error) });
+  return handleRequests(apiUrl, requestOptions);
 }
 
 export function deleteServiceRequest(id) {
-    const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL
-        }/serviceRequests/${id}`;
-    const requestOptions = {
-        method: 'DELETE',
-        //headers: { 'Content-Type': 'application/json' },
-    };
-    return fetch(apiUrl, requestOptions);
+  debugger;
+  const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL}/serviceRequests/${id}`;
+  const requestOptions = {
+    method: "DELETE",
+  };
+
+  return handleRequests(apiUrl, requestOptions);
 }
 
 export function saveServiceRequestPhoto(formData) {
-    const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL
-        }/serviceRequests/SaveFile`
-    const requestOptions = {
-        method: 'POST',
-        body: formData
-    }
-    console.log("na api: ", formData)
-    debugger
-    return fetch(apiUrl, requestOptions);
+  const apiUrl = `${process.env.REACT_APP_PETI_CORE_API_URL}/serviceRequests/SaveFile`;
+  const requestOptions = {
+    method: "POST",
+    body: formData,
+  };
+
+  return handleRequests(apiUrl, requestOptions);
 }

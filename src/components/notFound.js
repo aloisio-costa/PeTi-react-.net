@@ -4,15 +4,16 @@ import { Alert } from "react-bootstrap";
 const NotFound = () => {
     return (
         <Alert className="mt-3" variant="danger">
-            <Alert.Heading>Page not Found Error</Alert.Heading>
+            <Alert.Heading>Page not Found</Alert.Heading>
             <p>
-                Sorry we could not find this page
+                Looks like you've followed a broken link or entered a URL that doesn't exist on this website
             </p>
             <hr />
             <p className="mb-0">
-                <Link to="/">Back to Home Page</Link>
+                <Link to="/">Back to our page</Link>
             </p>
         </Alert>
+
     )
 }
 

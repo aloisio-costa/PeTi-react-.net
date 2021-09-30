@@ -1,98 +1,70 @@
-import { React, useState, useEffect } from 'react'
-import Home from './Pages/Home';
+import React from "react";
+import Home from "./components/Home";
 
-import PetSitters from './Pages/PetSitters/index';
-import PetSitterProfile from './Pages/PetSitters/show';
-import PetSitterProfileEdit from './Pages/PetSitters/edit';
-import PetSitterProfileNew from './Pages/PetSitters/new';
+import PetSitters from "./components/PetSitters/index";
+import PetSitterProfile from "./components/PetSitters/show";
+import PetSitterProfileEdit from "./components/PetSitters/edit";
+import PetSitterProfileNew from "./components/PetSitters/new";
 
-import ServiceRequests from './Pages/ServiceRequests/index';
-import ServiceRequestsNew from './Pages/ServiceRequests/new';
-import ServiceRequestsEdit from './Pages/ServiceRequests/edit';
+import ServiceRequests from "./components/ServiceRequests/index";
+import ServiceRequestsNew from "./components/ServiceRequests/new";
+import ServiceRequestsEdit from "./components/ServiceRequests/edit";
 
-import AboutUs from './Pages/aboutUs';
-import Register from './Pages/Users/register';
-import Login from './Pages/Users/login';
+import AboutUs from "./components/aboutUs";
+import Register from "./components/Users/register";
+import Login from "./components/Users/login";
 
-import NotFound from 'Pages/notFound';
+import NotFound from "components/notFound";
 
-import FormExample from './test';
-import NavBar from './Pages/Partials/NavBar';
-import Footer from './Pages/Partials/footer';
+import NavBar from "./components/Partials/NavBar";
+import Footer from "./components/Partials/footer";
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
-    const [userName, setUserName] = useState('');
+  return (
+    <Router>
+      <div
+        className="container d-flex flex-column min-vh-100"
+        style={{ marginTop: "100px" }}
+      >
+        <NavBar />
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/aboutUs" component={AboutUs} exact />
 
-    useEffect(() => {
-        (
-            async () => {
-                const response = await fetch('https://localhost:44396/api/user', {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    credentials: 'include',
-                });
+          <Route path="/petSitters" component={PetSitters} exact />
+          <Route path="/petSitters/new" component={PetSitterProfileNew} exact />
+          <Route path="/petSitters/:id" component={PetSitterProfile} exact />
+          <Route
+            path="/petSitters/:id/edit"
+            component={PetSitterProfileEdit}
+            exact
+          />
 
-                const user = await response.json();
-                setUserName(user.name);
-                debugger
-                <NavBar userName={userName} setUserName={setUserName} />
-            }
-        )();
-    });
+          <Route path="/serviceRequests" component={ServiceRequests} exact />
+          <Route
+            path="/serviceRequests/new"
+            component={ServiceRequestsNew}
+            exact
+          />
+          <Route
+            path="/serviceRequests/:id/edit"
+            component={ServiceRequestsEdit}
+            exact
+          />
 
-    // useEffect(async () => {
-    //     debugger
-    //     const response = await fetch('https://localhost:44396/api/user', {
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json'
-    //         },
-    //         credentials: 'include',
-    //     });
-    //     debugger
-    //     const user = await response.json();
-    //     debugger
-    //     setUserName(user.name);
-    //     //<NavBar userName={userName} setUserName={setUserName} />
-    // }, [userName])
+          <Route path="/register" component={Register} exact />
+          <Route path="/login" component={Login} exact />
 
-    return (
-        <Router>
-            <div className="container d-flex flex-column min-vh-100">
-
-                <NavBar userName={userName} setUserName={setUserName} />
-                <Switch>
-                    <Route path='/' component={() => <Home userName={userName} />} exact />
-                    <Route path='/aboutUs' component={AboutUs} exact />
-
-                    <Route path='/petSitters' component={PetSitters} exact />
-                    <Route path='/petSitters/new' component={PetSitterProfileNew} exact />
-                    <Route path='/petSitters/:id' component={PetSitterProfile} exact />
-                    <Route path='/petSitters/:id/edit' component={PetSitterProfileEdit} exact />
-
-                    <Route path='/serviceRequests' component={ServiceRequests} exact />
-                    <Route path='/serviceRequests/new' component={ServiceRequestsNew} exact />
-                    <Route path='/serviceRequests/:id/edit' component={ServiceRequestsEdit} exact />
-                    <Route path='/tests' component={FormExample} exact />
-
-                    <Route path='/register' component={Register} exact />
-                    <Route path='/login' component={() => <Login setUserName={setUserName} />} exact />
-
-                    <Route path='*' component={NotFound} />
-                </Switch>
-                <div className="mt-auto">
-                    <Footer />
-                </div>
-
-
-            </div>
-        </Router>
-
-    )
+          <Route path="*" component={NotFound} />
+        </Switch>
+        <div className="mt-auto">
+          <Footer />
+        </div>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
