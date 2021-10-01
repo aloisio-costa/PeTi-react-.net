@@ -1,70 +1,53 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# What is it? 
+PeTi is a "Uber" of pet services. A simple prototype website which the goal is to connect people who are looking for someone to take care of their pet/s with people who are willing to do so.
 
-## Available Scripts
+### Home page
+![PeTi_HomePage](https://user-images.githubusercontent.com/86933138/135457755-5c24fd75-9e80-43b8-86cc-d342fb2b6fc3.png)
 
-In the project directory, you can run:
+### Find Pet Sitters Page
+Page you will find a list of pet Sitters and can click them to see their profile.
+![PeTi_PetSitters](https://user-images.githubusercontent.com/86933138/135457927-25a252dd-3cfc-4c45-9e9d-af76c67208f8.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Profile page
+Page where you can see the pet sitter profile, see his/her reviews and leave a review yourself.
+![PeTi_PetSitterProfile](https://user-images.githubusercontent.com/86933138/135457906-c6aaac46-77cc-443a-80be-65bda24d82de.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### My Requests
+Page where you can see your requests, edit 
+![PeTi_ServiceRequests](https://user-images.githubusercontent.com/86933138/135457963-56fa1117-6f27-4371-9466-2aa30cb2de23.png)
 
-### `npm test`
+and make new ones.
+![PeTi_NewServiceRequest](https://user-images.githubusercontent.com/86933138/135460363-2190ad3d-25a0-4d91-be10-92c9e4bdde83.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Note that to see "My Pet Sitting" and "My Requests page" you need to be logged in.**
 
-### `npm run build`
+The website runs without the API. In .ENV file, you can change `"DISPLAY_MODE"` to "true" to be able to see 
+some examples of Services Requests and Pet Sitter profiles. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# What did I use?
+The project client side was written in React and the API in .NET/C#.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**React**
+- React Hooks and functional components
+- Redux 
+- Bootstrap for the majority of the styling
+- Google OAuth service for authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**.Net API**
+- Entity Framework Core
+- Swagger
+- SQL server
+- Postman for testing
 
-### `npm run eject`
+#
+The project is still in development, I make changes frequently as I can and as I evolve as a developer and 
+learn new things I can implement in it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Note:
+- I am aware there is a lot reapeated code
+- I do not have unitary tests yet
+- There might be some commented code or console logs
+- The API needs a lot of work yet, I did it as simple as possible to have something work with my client side
+This Project API can be found here https://github.com/aloisio-costa/PeTi-API
