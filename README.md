@@ -21,7 +21,7 @@ Page where you can see your requests, edit
 and make new ones.
 ![PeTi_NewServiceRequest](https://user-images.githubusercontent.com/86933138/135460363-2190ad3d-25a0-4d91-be10-92c9e4bdde83.png)
 
-**Note that to see "My Pet Sitting" and "My Requests page" you need to be logged in.**
+**Note that to see "My Pet Sitting" and "My Requests" page you need to be logged in.**
 
 The website runs without the API. In .ENV file, you can change `"DISPLAY_MODE"` to "true" to be able to see 
 some examples of Services Requests and Pet Sitter profiles. 
