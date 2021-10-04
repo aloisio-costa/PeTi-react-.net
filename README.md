@@ -46,7 +46,7 @@ The project is still in development, I make changes frequently as I can and as I
 learn new things I can implement in it.
 
 ### Note:
-- I am aware there is a lot reapeated code
+- I am aware there is some reapeated code
 - I do not have unitary tests yet
 - There might be some commented code or console logs
 - The API needs a lot of work yet, I did it as simple as possible to have something work with my client side
