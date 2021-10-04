@@ -6,7 +6,7 @@ PeTi is a "Uber" of pet services. A simple prototype website which the goal is t
 ![PeTi_HomePage](https://user-images.githubusercontent.com/86933138/135457755-5c24fd75-9e80-43b8-86cc-d342fb2b6fc3.png)
 
 ### Find Pet Sitters Page
-Page you will find a list of pet Sitters and can click them to see their profile.
+Page where you will find a list of pet Sitters & can click them to see their profile.
 ![PeTi_PetSitters](https://user-images.githubusercontent.com/86933138/135457927-25a252dd-3cfc-4c45-9e9d-af76c67208f8.png)
 
 
